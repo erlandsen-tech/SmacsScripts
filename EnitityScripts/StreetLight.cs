@@ -18,7 +18,11 @@ public class StreetLight : MonoBehaviour
     //Turn on the light if object enters its zone. Not if its a vehicle
     private void OnTriggerEnter(Collider other)
     {
+<<<<<<< HEAD
         if(other.gameObject.CompareTag("Player"))
+=======
+        if(!other.gameObject.CompareTag("Player"))
+>>>>>>> 67b7ae05906c0268259ea3d952d1b45a69fde071
         {
             activate();
         }
@@ -31,12 +35,20 @@ public class StreetLight : MonoBehaviour
     private bool getDayTime()
     {
         var timeOfday = sun.GetComponent<SetTimeOfDay>();
+<<<<<<< HEAD
         bool dayTime = (timeOfday.currentTimeOfDay > 0.3 && timeOfday.currentTimeOfDay < 0.7);
+=======
+        bool dayTime = (timeOfday.currentTimeOfDay < 0.3 && timeOfday.currentTimeOfDay > 0.6);
+>>>>>>> 67b7ae05906c0268259ea3d952d1b45a69fde071
         return dayTime;
     }
     private void activate()
     {
+<<<<<<< HEAD
         if (!getDayTime())
+=======
+        if (getDayTime())
+>>>>>>> 67b7ae05906c0268259ea3d952d1b45a69fde071
         {
             streetLight.enabled = true;
         }
